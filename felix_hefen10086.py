@@ -5,6 +5,7 @@ new Env('和粉');
 '''
 import time
 import requests
+import os
 
 if "hefen_token" in os.environ:
     if len(os.environ["hefen_token"]) > 1:
