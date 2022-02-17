@@ -25,6 +25,7 @@ def checkin(num, token):
           'Content-Type': 'application/x-www-form-urlencoded, application/json; charset=utf-8'}
     data = {"mobile": num}
     r = requests.post('https://t.hefen.10086.cn/afservice/service/invoke.do', json=data, headers=hd)
+    print(r.text)
     return r.json()
 
 if __name__ == '__main__':
