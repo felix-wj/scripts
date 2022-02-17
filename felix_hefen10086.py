@@ -6,6 +6,13 @@ new Env('和粉');
 import time
 import requests
 import os
+import logging
+
+try:
+    from notify import send
+except Exception as err:
+    logger.debug(str(err))
+    logger.info("无推送文件")
 
 if "hefen_token" in os.environ:
     if len(os.environ["hefen_token"]) > 1:
@@ -25,7 +32,7 @@ def checkin(num, token):
           'Content-Type': 'application/x-www-form-urlencoded, application/json; charset=utf-8'}
     data = {"mobile": num}
     r = requests.post('https://t.hefen.10086.cn/afservice/service/invoke.do', json=data, headers=hd)
-    print(r.text)
+    send("和粉签到",r.text)
     return r.json()
 
 if __name__ == '__main__':
