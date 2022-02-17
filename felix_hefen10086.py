@@ -15,7 +15,7 @@ if "hefen_token" in os.environ:
 if "hefen_mobile" in os.environ:
     if len(os.environ["hefen_mobile"]) > 1:
         hefen_mobile = os.environ["hefen_mobile"]
-        print("已获取并使用环境变量中纬度 mt_latitude :" + wm_latitude)
+        print("已获取并使用环境变量中纬度 hefen_mobile :" + hefen_mobile)
 def checkin(num, token):
     hd = {'FROM': 'X0003', 'Host': 't.hefen.10086.cn', 'MSGNAME': 'userSignReq', 'Origin': 'https://t.hefen.10086.cn',
           'Referer': 'https://t.hefen.10086.cn/html5/views/person_center/person_sign.html?zrsign=0&rwId=5',
