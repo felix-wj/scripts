@@ -131,7 +131,6 @@ while i < len(groups):
     print(site_name)
     print(web_site)
     print(username)
-    print(pswd)
     
     run = SspanelQd(site_name, web_site ,username ,pswd)
     run.main()
