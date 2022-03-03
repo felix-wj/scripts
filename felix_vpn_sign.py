@@ -10,6 +10,9 @@
 //每两个机场用回车键隔开
 //例如: 某某云|https://www.yun.com|jjjj@qq.com,password
 
+cron:  0 20 9 * * ? felix_vpn_sign.py
+new Env('VPN签到');
+
 """
 import requests
 import os
