@@ -1,3 +1,9 @@
+
+'''
+cron:  0 20 8 * * ? felix_tianyiyunpan.py
+new Env('天翼云盘');
+'''
+
 import time
 import re
 import json
@@ -85,7 +91,7 @@ def login(username, password):
         print("没有找到url")
 
     r = s.get(url)
-    pattern = r"]*href=\"([^\"]+)\""
+    pattern =r"<a id=\"j-tab-login-link\"[^>]*href=\"([^\"]+)\""
     match = re.search(pattern, r.text)
     if match:
         href = match.group(1)
@@ -166,7 +172,7 @@ def sign_in(s):
 
 def send_email_notification(res1, res2, res3, res4):
     msg = "签到结果：\n{res1}\n{res2}{res3}{res4}"
-    send("VPN签到",msg)
+    send("签到",msg)
 
 def main():
     i = 0
