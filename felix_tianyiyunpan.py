@@ -1,8 +1,8 @@
 
-'''
+"""
 cron:  0 20 8 * * ? felix_tianyiyunpan.py
 new Env('天翼云盘');
-'''
+"""
 
 import time
 import re
@@ -170,10 +170,6 @@ def sign_in(s):
 
     return res1, res2, res3, res4
 
-def send_email_notification(res1, res2, res3, res4):
-    msg = "签到结果：\n{res1}\n{res2}{res3}{res4}"
-    send("签到",msg)
-
 def main():
     i = 0
     while i<len(groups):
@@ -184,8 +180,6 @@ def main():
         password = prop[1]
         s = login(username, password)
         res1, res2, res3, res4 = sign_in(s)
-        send_email_notification(res1, res2, res3, res4)
-
 def lambda_handler(event, context):
     main()
 
